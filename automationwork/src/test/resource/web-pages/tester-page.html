@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tester View</title>
+</head>
+    
+</body>
+
+    <h2>View Defects</h2>
+        <ul>    
+            <li>Login Failed</li>
+            <li>Account Locked</li>
+           
+        </ul>
+    <h2>Choose completion status</h2>
+    <form>  
+        <b> Select completion status </b>  
+        <select id = "myList" onchange = "completionStatus()" >  
+        <option> ---Choose completion status--- </option>  
+        <option> Fixed/Rejected/Shelved </option>  
+        <option> Accepted </option>  
+        <option> Completed </option>    
+        </select>    
+        </form>  
+    <h2>Sign off Defect Completion</h2>
+    <input type="text" placeholder="Sign off">
+    <button onclick="transferToPageTwo()">Send to CEO</button>
+    <br>
+
+    <button onclick="transferToPageOne()">Return to login page</button>
+     
+
+    </body>
+
+  
+   
+<script>
+        // to transfer from one local html file to another you can use the window.location.href property
+       
+
+        async function transferToPageOne(){
+            
+            window.location.href = "P1html-login.html";
+        }
+        async function transferToPageTwo(){
+            window.location.href = "manager-page.html";
+        }
+
+        
+
+
+</script>
+</html>
