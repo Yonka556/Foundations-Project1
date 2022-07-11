@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.automation.poms;
 
 import org.openqa.selenium.WebDriver;
@@ -34,3 +35,41 @@ public class Manager {
 
 
 }
+=======
+package com.automation.poms;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+
+public class Manager {
+    
+    @FindBy(id = "defectInput")
+    public WebElement defectInput;
+    @FindBy(id = "testerName")
+    public WebElement testerInput;
+    @FindBy(id = "btn")
+    public WebElement submitButton;
+
+
+    public Manager(WebDriver driver){
+        PageFactory.initElements(driver, this);
+    }
+
+    public void enterDefect(String defectId){
+        this.defectInput.sendKeys(defectId); 
+    }
+
+    public void enterTester(String tester){
+        this.testerInput.sendKeys(tester);
+    }
+
+    public void clickButton(){
+        this.submitButton.click();
+    }
+
+
+}
+>>>>>>> 3d0b98e7029399d3af9fa85c3f57caccd89fad20
