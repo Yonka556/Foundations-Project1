@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+</head>
+
+        <title>Tester View</title>
+        <br>
+
+<body onload = 'acceptDefect()'>
+   <table id = 'VillianBoard'>
+    <tr>
+        <th>
+            Defect Id
+        </th>
+        <th>
+            Accept Decline Defect
+        </th>
+        <th>
+            Defect Description
+        </th>
+        <th>Submit</th>
+        
+    </tr>
+    <tr>
+        <td>
+            <select name="defectId" id="defectId"></select>
+            </td>
+            <td>
+                <select name="Accepted" id="Accepted">
+                <option value="Accepted">
+                    accepted
+                </option>
+                <option value="Declined">
+                    declined
+                </option></select>
+                </td>
+                
+                <td id = "DefectDescription">
+                    <input type="text">
+                    
+                    </td>
+                    <td>
+                        <button onclick="submit(); alert('defect updated');window.location.reload()"; id="submitButton1">submit</button>
+                        
+                    </td>
+                    </tr>
+                    
+   </table>
+
+   <table id = 'AcceptedDefectVillianBoard'>
+    <tr>
+        <th>
+            Defect Id
+        </th>
+        <th>
+            Fix Shelve Reject
+        </th>
+        <th>
+            Defect Description 
+        </th>
+        <th>Submit</th>
+        
+    </tr>
+    <tr>
+        <td>
+            <select name="AcceptedDefectId" id="AcceptedDefectId"></select>
+            </td>
+            <td>
+                <select name="Fix" id="Fix">
+                <option value="Fix">
+                    Fix
+                </option>
+                <option value="Shelved">
+                    Shelved
+                </option>
+                <option value="Rejected">
+                    Rejected
+                </option>
+                </select>
+                </td>
+                
+                <td id ='newDefectDescription'>
+                    <input type="text">
+                    
+                    </td>
+                    <td>
+                        <button onclick="AcceptedSubmit();alert('defect updated');window.location.reload()"; id = "submitButton2">Submit</button>
+                    </td>
+                    </tr>
+                    
+   </table>
+  
+   <button window.location.href ="P1html-login.html", onclick="transferToLoginPage()">Return to Login</button> 
+
+</body>
+<Script>
+    const defectId = document.getElementById('defectId');
+    const DefectDescription = document.getElementById("DefectDescription")
+    const AcceptedDefectId = document.getElementById('AcceptedDefectId');
+    const AcceptedDefectDescription = document.getElementById("newDefectDescription")
+        
+        async function acceptDefect(){
+            let data = JSON.parse(localStorage.getItem('emp'))
+    //  defectId.innerHTML = ` <option value="">
+    //                 select one
+    //             </option>
+    //             `
+                    
+    // AcceptedDefectId.innerHTML = ` <option value="">
+    //                 select one
+    //             </option>
+    //             `
+               
+let updateDefectResponse = await fetch(`https://bugcatcher.coe.revaturelabs.com/1/defects/15570`, )
+    if(updateDefectResponse.status === 200){
+        let responseBody = await updateDefectResponse.json();
+            console.log(responseBody[0])
+        for(Tester1 of responseBody){
+            
+        if(data.username === username['assignedTo']&&username['status'] ==='Pending'){
+            console.log(username['defectId'])
+            defectId.innerHTML = defectId.innerHTML + ` <option value="${username['defectId']}">
+                    ${username['defectId']}
+                </option>`
+                DefectDescription.innerHTML =  DefectDescription.innerHTML + ` <option value="${username['desc']}">
+                    ${username['desc']}
+                </option>`
+        }
+       else if(data.username === username['assignedTo']&&username['status'] ==='Accepted'){
+            console.log(username['defectId'])
+            AcceptedDefectId.innerHTML = AcceptedDefectId.innerHTML + ` <option value="${username['defectId']}">
+                    ${username['defectId']}
+                </option>`
+                AcceptedDefectDescription.innerHTML =  AcceptedDefectDescription.innerHTML + ` <option value="${username['desc']}">
+                    ${username['desc']}
+                </option>`
+        }
+        
+        }
+        
+        
+    }
+        
+        }
+        
+        const status = document.getElementById("Accepted")
+     async function submit(){
+        console.log(status.options[status.selectedIndex].value)
+        let submitDefect = {
+              status: status.options[status.selectedIndex].value
+            
+    }
+       console.log(defectId.options[defectId.selectedIndex].value)
+       let loginJSON = JSON.stringify(submitDefect);
+
+// now I can set up my HTTP request configurations
+let config = {
+    method:"PATCH", // method is a reference to the kind of request you are making (the verb): GET is the default
+    headers:{'Content-Type':"application/json"}, // some APIs will return an error message without this value included
+    body: loginJSON
+}
+
+let httpResponse = await fetch(`https://bugcatcher.coe.revaturelabs.com/1/defects/15570${AcceptedDefectId.options[AcceptedDefectId.selectedIndex].value}`,config);
+    acceptDefect()
+       
+}
+         const AcceptedStatus = document.getElementById("Fixed")
+     async function AcceptedSubmit(){
+        console.log(AcceptedStatus.options[status.selectedIndex].value)
+        let submitDefect = {
+              status: AcceptedStatus.options[AcceptedStatus.selectedIndex].value
+            
+    }
+       let loginJSON = JSON.stringify(submitDefect);
+
+// now I can set up my HTTP request configurations
+let config = {
+    method:"PATCH", // method is a reference to the kind of request you are making (the verb): GET is the default
+    headers:{'Content-Type':"application/json"}, // some APIs will return an error message without this value included
+    body: loginJSON
+}
+
+let httpResponse = await fetch(`https://bugcatcher.coe.revaturelabs.com/1/defects/15570${AcceptedDefectId.options[AcceptedDefectId.selectedIndex].value}`,config);
+    acceptDefect()
+
+    async function transferToLoginPage(){
+         window.location.href = "P1html-login.html";
+
+    }
+       
+
+    
+    
+
+}
+
+</Script>
+</html>
+
+    <title>TesterPage</title>
+</head>
+<body>
+    
+</body>
+</html>
