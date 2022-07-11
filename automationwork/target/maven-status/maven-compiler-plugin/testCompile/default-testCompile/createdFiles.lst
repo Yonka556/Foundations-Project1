@@ -1,0 +1,5 @@
+com\automation\steps\DefectSteps.class
+com\automation\poms\Login.class
+com\automation\runner\TestRunner.class
+com\automation\poms\Manager.class
+com\automation\steps\LoginSteps.class

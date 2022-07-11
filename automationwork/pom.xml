@@ -11,12 +11,12 @@
 
   <name>automationwork</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>C:\Users\Arod1\OneDrive\Desktop\VSC\Maven\Foundations-Project1\automationwork\src\test\resource\web-pages</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencies>

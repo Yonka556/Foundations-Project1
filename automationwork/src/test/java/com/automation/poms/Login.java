@@ -16,6 +16,13 @@ public class Login {
 
     // these WebElements need to referenced in our steps so they are public
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
+    }
     //this tells the PageFactory to find the element with the id username and assign it to this field
     @FindBy(id = "username") 
     public WebElement usernameInput;
