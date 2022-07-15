@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.automation.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.704 s - in com.automation.runner.TestRunner
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.182 s <<< FAILURE! - in com.automation.runner.TestRunner
+initializationError(com.automation.runner.TestRunner)  Time elapsed: 0.019 s  <<< ERROR!
+io.cucumber.core.gherkin.FeatureParserException: 
+Failed to parse resource at: file:///C:/Users/Arod1/OneDrive/Desktop/VSC/Maven/Foundations-Project1/automationwork/src/test/resource/features/login.feature
+(1:1): expected: #EOF, #Language, #TagLine, #FeatureLine, #Comment, #Empty, got '<<<<<<< HEAD'
+(17:1): expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got '======='
+(18:1): expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got 'Feature: Users of my bug catcher application should be able to log in to their respective home pages'
+(33:1): expected: #EOF, #TableRow, #DocStringSeparator, #StepLine, #TagLine, #ExamplesLine, #ScenarioLine, #RuleLine, #Comment, #Empty, got '>>>>>>> 3d0b98e7029399d3af9fa85c3f57caccd89fad20'
+
