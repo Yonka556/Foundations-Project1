@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.automation.poms.Login;
-import com.automation.poms.Manager;
+import com.automation.poms.PageOne;
+import com.automation.poms.PageTwo;
 import com.automation.poms.Tester;
 
 import io.cucumber.junit.Cucumber;
@@ -20,23 +20,24 @@ import io.cucumber.junit.CucumberOptions;
 
 public class TestRunner {
 
+    public static final String PageTwo = null;
     public static WebDriver driver;
-    public static Login login;
+    public static PageOne pageOne;
     public static WebDriverWait wait;
-    public static Manager manager;
+    public static PageTwo manager;
     public static Tester tester;
 
-    @BeforeClass // this males the method execute before all the steps
+    @BeforeClass 
     public static void setup(){
-        // make sure to set the value for the key as the full relative path to the chromedriver.exe
+        
         System.setProperty("webdriver.chrome.driver","src/test/resource/chromedriver.exe");
         driver = new ChromeDriver();
-        login = new Login(driver);
-        manager = new Manager(driver);
+        pageOne = new PageOne(driver);
+        manager = new PageTwo(driver);
         tester = new Tester(driver);
     }
 
-    @AfterClass // this makes the method execute after all the steps
+    @AfterClass 
     public static void teardown(){
         driver.quit();
     }

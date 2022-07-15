@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.automation.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.182 s <<< FAILURE! - in com.automation.runner.TestRunner
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.067 s <<< FAILURE! - in com.automation.runner.TestRunner
 initializationError(com.automation.runner.TestRunner)  Time elapsed: 0.019 s  <<< ERROR!
 io.cucumber.core.gherkin.FeatureParserException: 
 Failed to parse resource at: file:///C:/Users/Arod1/OneDrive/Desktop/VSC/Maven/Foundations-Project1/automationwork/src/test/resource/features/login.feature

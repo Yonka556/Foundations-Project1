@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class Manager {
+public class PageTwo {
     
-    @FindBy(id = "defectInput")
+    @FindBy(id = "textInput")
     public WebElement defectInput;
     @FindBy(id = "testerName")
     public WebElement testerInput;
@@ -17,7 +17,7 @@ public class Manager {
     public WebElement submitButton;
 
 
-    public Manager(WebDriver driver){
+    public PageTwo(WebDriver driver){
         PageFactory.initElements(driver, this);
     }
 

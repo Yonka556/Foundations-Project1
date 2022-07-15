@@ -8,17 +8,17 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class DefectSteps {
+public class PageTwoSteps {
     
 
-    @Given("the manager is on their correct home page")
-    public void the_manager_is_on_their_correct_home_page(){
-        TestRunner.driver.get("File://C:/Users/Arod1/OneDrive/Desktop/VSC/Maven/Foundations-Project1/automationwork/src/test/resource/web-pages/manager-page.html");
+    @Given("Selenium has pulled up page two")
+    public void Selenium_has_pulled_up_page_two(){
+        TestRunner.driver.get("File://C:/Users/Arod1/OneDrive/Desktop/VSC/Maven/Foundations-Project1/automationwork/src/test/resource/web-pages/PageTwo.html");
     }
 
-    @When("the manager creates the defect in the text box")
-    public void the_manager_creates_the_defect_in_the_text_box(){
-        TestRunner.manager.enterDefect("defectInput");
+    @When("Selenium enters some text into the first input when it is visible")
+    public void Selenium_enters_some_text_into_the_first_input_when_it_is_visible(){
+        TestRunner.PageTwo.textInput("textInput");
     }
 
     @When("the manager enters the testers username")
